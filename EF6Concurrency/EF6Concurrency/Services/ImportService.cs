@@ -43,10 +43,12 @@ namespace EF6Concurrency.Services
                 }
             }
             // Catch the problem raised in the try
-            catch (Exception)
+            catch (Exception e)
             {
                 // Change the record perviously saved
-                PersonOfInterest.Status = "Failed";
+                PersonOfInterest.Status = string.Format("Failed {0}", e.Message);
+
+                // Call save changes - raises concurrency issue.
                 context.SaveChanges();
             }                        
         }
