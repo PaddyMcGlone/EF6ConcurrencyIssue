@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -16,28 +15,5 @@ namespace EF6Concurrency.Models
             // Add custom user claims here
             return userIdentity;
         }
-    }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        #region Properties
-
-        public DbSet<Person> Persons { get; set; }
-
-        #endregion
-
-        #region Constructor
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
-        #endregion
-
-        #region Helper methods
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-        #endregion
     }
 }
