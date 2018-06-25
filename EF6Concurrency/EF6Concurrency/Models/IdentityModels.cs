@@ -1,8 +1,7 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EF6Concurrency.Models
 {
@@ -20,14 +19,19 @@ namespace EF6Concurrency.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        #region Constructor
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        #endregion
 
+        #region Helper methods
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        #endregion
     }
 }
