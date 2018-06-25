@@ -20,7 +20,7 @@ namespace EF6Concurrency.Services
                 using (TransactionScope scope = new TransactionScope())
                 {
                     // Read the contents of the file
-                    string fileContents = File.ReadAllText(@"C:\Users\paddy\Documents.txt");
+                    string fileContents = File.ReadAllText(@"C:\Users\paddy\Documents\MyTestFile.txt");
 
                     // Populate an object with file contents
                     PersonOfInterest = new Person

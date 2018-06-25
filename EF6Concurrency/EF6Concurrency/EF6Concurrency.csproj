@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201806251837204_Adding Persons into context..Designer.cs">
       <DependentUpon>201806251837204_Adding Persons into context..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806251913547_Adding person status.cs" />
+    <Compile Include="Migrations\201806251913547_Adding person status.Designer.cs">
+      <DependentUpon>201806251913547_Adding person status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -259,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251837204_Adding Persons into context..resx">
       <DependentUpon>201806251837204_Adding Persons into context..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251913547_Adding person status.resx">
+      <DependentUpon>201806251913547_Adding person status.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
