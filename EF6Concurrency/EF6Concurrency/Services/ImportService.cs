@@ -43,7 +43,7 @@ namespace EF6Concurrency.Services
                 }
             }
             // Catch the problem raised in the try
-            catch (Exception e)
+            catch (Exception)
             {
                 // Change the record perviously saved
                 PersonOfInterest.Status = "Failed";

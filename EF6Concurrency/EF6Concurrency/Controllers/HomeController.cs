@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using EF6Concurrency.Services;
 using System.Web.Mvc;
 
 namespace EF6Concurrency.Controllers
@@ -24,6 +21,16 @@ namespace EF6Concurrency.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Service()
+        {
+            var importService = new ImportService();
+             importService.Execute();
+
+            ViewBag.Message = "You have executed the service.";
+            
             return View();
         }
     }
