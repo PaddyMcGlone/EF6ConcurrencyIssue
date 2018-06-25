@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -19,6 +20,11 @@ namespace EF6Concurrency.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        #region Properties
+
+        public DbSet<Person> Persons { get; set; }
+
+        #endregion
 
         #region Constructor
         public ApplicationDbContext()
